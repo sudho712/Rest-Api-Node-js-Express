@@ -1,18 +1,23 @@
-﻿# Rest-Api-Node-js-Express
+# Rest-Api-Node-js-Express
 This API is designed to manage user data. It supports basic CRUD (Create, Read, Update, Delete) operations for user management. The data for testing can be generated using Mockaroo.
 
-Rest Api - Jsoan
+Rest Api - Json
 
-GET /user - list all users
+GET / api/user - HTML Document Render
+GET /api/user - list all users - Done
 
-GET / user/1  get the User With ID 1
-GET / user/2  get the User With ID 2
+GET /api/ user/1  get the User With ID 1
+GET /api/user/2  get the User With ID 2
 
-POST /user - create new User
+Dynamic Path Parameter
+GET /api/user/:id
+:id -> Variable Dynamic 
 
-PATCH /User/1 - Edit The User With ID 1
+POST /api/user - create new User
 
-DELETE /User/1 - Delete the User With ID 1
+PATCH /api/User/1 - Edit The User With ID 1
+
+DELETE /api/User/1 - Delete the User With ID 1
 
 
 https://mockaroo.com/
