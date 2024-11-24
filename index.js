@@ -4,6 +4,8 @@ const users = require('./MOCK_DATA.json');
 const app =express();
 const PORT=3000;
 
+// middleware - plugin to store the data  in json file throw postman
+app.use(express.urlencoded({extended: false}));
 // Routes
 
 app.get("/api/users", (req, res) => {
@@ -34,6 +36,12 @@ app
     // delete with user id
     return res.json({status: "pending"});
 
+});
+
+app.post("/api/users",(req,res)=>{
+   const body=req.body;
+   console.log('Body',body);
+    return res.json({status: "pending"});
 });
 /* 
 app.get("/api/users/:id", (req, res) => {
