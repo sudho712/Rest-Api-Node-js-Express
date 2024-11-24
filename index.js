@@ -1,10 +1,11 @@
 const express = require("express");
+const fs=require('fs');
 const users = require('./MOCK_DATA.json');
 
 const app =express();
 const PORT=3000;
 
-// middleware - plugin to store the data  in json file throw postman
+// middleware - plugin to store the data  in json file
 app.use(express.urlencoded({extended: false}));
 // Routes
 
@@ -40,8 +41,10 @@ app
 
 app.post("/api/users",(req,res)=>{
    const body=req.body;
-   console.log('Body',body);
-    return res.json({status: "pending"});
+   users.push({...body,id: users.length+1});
+   fs.writeFile('./MOCK_DATA.JSON',JSON.stringify(users), (err, data) => {
+    return res.json({status: "Success", id:  users.length+1});
+   });    
 });
 /* 
 app.get("/api/users/:id", (req, res) => {
